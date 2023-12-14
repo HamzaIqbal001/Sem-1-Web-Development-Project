@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contact-form");
+
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Retrieving form data
+    const name = document.getElementById("your-name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const enquiry = document.getElementById("enquiry").value;
+
+    // Displaying alert message
+    alert("Thank You! Your response has been submitted.");
+
+    // Resetting the form
+    contactForm.reset();
+  });
+});
+
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
@@ -34,21 +54,3 @@ sr.reveal(
     origin: "top",
   }
 );
-
-const contactForm = document.getElementById("contact-form");
-
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const yourName = document.getElementById("your-name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const enquiry = document.getElementById("enquiry").value;
-
-  console.log(`Your Name: ${yourName}`);
-  console.log(`Email: ${email}`);
-  console.log(`Subject: ${subject}`);
-  console.log(`Enquiry: ${enquiry}`);
-
-  alert("Your message has been successfully sent!");
-});
